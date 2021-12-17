@@ -1,0 +1,19 @@
+.login-form{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+form{
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 1rem;
+  h1 {
+    align-self: center;
+  }
+}
+  
