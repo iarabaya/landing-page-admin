@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormGroupDirective, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { LoginService } from '../login.service';
+
 import { User } from '../user.interface';
 
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -30,16 +33,16 @@ export class LoginComponent {
 
     this.loginService.login(this.user.email, this.user.password).subscribe( res => {
       console.log(res)
-      if(res.id){
-        localStorage.setItem('email', this.user.email);
+      if(res.email){
         localStorage.setItem('roleId', JSON.stringify(res.rol.id));
         localStorage.setItem('userId', JSON.stringify(res.id));
-        this.router.navigateByUrl('dashboard/triplist');
+        localStorage.setItem('userFullName', JSON.stringify(res.fullName))
+        this.router.navigateByUrl('dashboard/home')
       }
     },
     error => {
       let msj = `${error.error}, status: ${error.status}`
-      // Swal.fire('Error', msj ,'error');
+      Swal.fire('Error', msj ,'error');
     })
 
     formDirective.resetForm();

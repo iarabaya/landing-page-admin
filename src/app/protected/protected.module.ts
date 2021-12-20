@@ -9,6 +9,8 @@ import { ListsComponent } from './pages/lists/lists.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TravelsComponent } from './pages/travels/travels.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './pages/home/home.component';
+import { ProtectedComponent } from './protected.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HistoryComponent,
     ListsComponent,
     RegisterComponent,
-    TravelsComponent
+    TravelsComponent,
+    HomeComponent,
+    ProtectedComponent
   ],
   imports: [
     CommonModule,

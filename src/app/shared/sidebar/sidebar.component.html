@@ -1,0 +1,25 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <ul>
+      <li *ngIf="!this.email">
+        <button  mat-raised-button routerLink="/auth/login">Login</button>
+      </li>
+      <li *ngIf="this.email">
+        <button  mat-raised-button routerLink="/dashboard/register">Registro</button>
+      </li>
+      <li *ngIf="this.email">
+        <button  mat-raised-button routerLink="/dashboard/history">Viajes</button>
+      </li>
+      <li *ngIf="this.email">
+        <button  mat-raised-button routerLink="/dashboard/history">Historial de Viajes</button>
+      </li>
+      <li *ngIf="this.email">
+        <button mat-raised-button routerLink="/dashboard/lists">Listas</button>
+      </li>
+      <li *ngIf="this.email">
+        <button  mat-raised-button (click)="logout()">Cerrar Sesión</button>
+      </li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>

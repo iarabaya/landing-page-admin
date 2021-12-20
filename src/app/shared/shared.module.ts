@@ -4,12 +4,16 @@ import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from '../material.module';
 import { ProtectedRoutingModule } from '../protected/protected-routing.module';
 import { AuthRoutingModule } from '../auth/auth-routing.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +22,8 @@ import { AuthRoutingModule } from '../auth/auth-routing.module';
     AuthRoutingModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent
   ]
 })
 export class SharedModule { }
